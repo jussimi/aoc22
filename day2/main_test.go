@@ -9,10 +9,19 @@ import (
 //go:embed test.txt
 var test []byte
 
-func TestModule(t *testing.T) {
-	const expected = 24000 // REPLACE ME
+func TestPart1(t *testing.T) {
+	const expected = 15
 	fmt.Println(test)
-	ans := run(test)
+	ans := runPart1(test)
+	if ans != expected {
+		t.Errorf("Received: %d; Expected %d", ans, expected)
+	}
+}
+
+func TestPart2(t *testing.T) {
+	const expected = 12
+	fmt.Println(test)
+	ans := runPart2(test)
 	if ans != expected {
 		t.Errorf("Received: %d; Expected %d", ans, expected)
 	}
